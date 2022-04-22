@@ -15,7 +15,6 @@ public class ChatCommands {
     }
     private static int about(CommandContext<ServerCommandSource> context) {
         String about = new String("about about about about about about about about ");
-        //GetChat.getChat();
         context.getSource().sendFeedback(new LiteralText(about), true);
         return 1;
     }
