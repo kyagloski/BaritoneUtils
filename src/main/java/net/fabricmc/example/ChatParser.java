@@ -1,7 +1,6 @@
 package net.fabricmc.example;
 
 import net.minecraft.text.Text;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.UUID;
@@ -11,17 +10,32 @@ import static net.fabricmc.example.BaritoneUtils.LOGGER;
 
 public class ChatParser {
 
-    public static void handleNewChat(UUID sender, Text message) {
-        String message_str = message.getString();
-        Matcher m = Pattern.compile("<(.+?)>").matcher(message_str); // grab player name
-        String player_string = null;
-        if (m.find()) { player_string = m.group(1); }
-        else { LOGGER.info("cannot find player name. exiting."); return; }
-        if (player_string == null) { return; } // make call to check whitelist here, when its implemented
-        String message_contents = message_str.split(" ", 2)[1]; // grab all contents after first space
-        parseMessageContents(message_contents);
+    public static void handleNewChat(UUID sender, Text raw_message) {
+        // handles incoming chat messages
+        String messageStr = raw_message.getString();
+        String player = getPlayerString(messageStr); // get/check player string
+        String message = messageStr.split(" ", 2)[1]; // grab all contents after first space
+        if (player != null) { parseMessageContents(message); }
+    }
+
+    private static String getPlayerString(String message) {
+        // gets player string using regex (there's probably a better way)
+        // checks if player in whitelist
+        Matcher m = Pattern.compile("<(.+?)>").matcher(message); // grab player name
+        if (m.find()) {
+            String playerString = m.group(1);
+            // TODO: whitelist check here
+            return playerString;
+        } else {
+            LOGGER.info("cannot find player name. stopping.");
+            return null;
+        }
     }
     private static void parseMessageContents(String message) {
-        LOGGER.info(message);
+        char controlChar = '$'; // require hashtag for start of commands
+        if (message.charAt(0) == controlChar) { // i hate java (sometimes)
+            LOGGER.info(String.format("found command in: %s", message));
+            if (message.contains("about")) { Commands.about(); }
+        }
     }
 }
