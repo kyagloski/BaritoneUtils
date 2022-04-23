@@ -6,9 +6,9 @@ import net.minecraft.network.MessageType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class BaritoneUtils implements ModInitializer {
+public class BaritoneToolbox implements ModInitializer {
 
-	public static final Logger LOGGER = LoggerFactory.getLogger("BaritoneUtils");
+	public static final Logger LOGGER = LoggerFactory.getLogger("baritone-toolbox");
 
 	@Override
 	public void onInitialize() {
@@ -19,8 +19,7 @@ public class BaritoneUtils implements ModInitializer {
 			((InGameHudAccess)client.inGameHud).registerChatListener(
 					MessageType.CHAT,
 					(type, message, sender) -> {
-						//LOGGER.info(String.format("\nSENT MESSAGE%s\n", message.toString()));
-						ChatParser.handleNewChat(sender, message);
+						ChatParser.handleNewChat(message);
 					});
 		});
 	}

@@ -3,14 +3,13 @@ package net.fabricmc.example;
 import net.minecraft.text.Text;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.UUID;
 
-import static net.fabricmc.example.BaritoneUtils.LOGGER;
+import static net.fabricmc.example.BaritoneToolbox.LOGGER;
 
 
 public class ChatParser {
 
-    public static void handleNewChat(UUID sender, Text raw_message) {
+    public static void handleNewChat(Text raw_message) {
         // handles incoming chat messages
         String messageStr = raw_message.getString();
         String player = getPlayerString(messageStr); // get/check player string

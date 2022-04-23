@@ -7,15 +7,18 @@ public class Commands {
     private static final MinecraftClient mc = MinecraftClient.getInstance();
 
     public static void about() {
-        String[] aboutTexts = {"+--------BARITONE-UTILS--------+",
+        String[] aboutTexts = { "+--------BARITONE-UTILS--------+",
                 "+-adds global chat commands------+",
                 "+-for remote baritone bots-------+",
-                "+-created by: github.com/kyagloski/"};
+                "+-created by: github.com/kyagloski/" };
         for (String str : aboutTexts) {
             mc.player.sendChatMessage(str);
             try { Thread.sleep(100); }
-            catch(Exception e) { return; }
+            catch(Exception e) { return; } // this is good practice, trust me
         }
+    }
+
+    public static void help() {
     }
 
 }

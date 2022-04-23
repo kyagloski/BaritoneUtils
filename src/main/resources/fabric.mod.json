@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "id": "baritone-utils",
+  "id": "baritone-toolbox",
   "version": "${version}",
 
-  "name": "Baritone Utils",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Baritone Toolbox",
+  "description": "Adds global chat commands for remote baritone bots.",
   "authors": [
-    "Me!"
+    "kyagloski"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/kyagloski/BaritoneUtils"
+    "sources": "https://github.com/kyagloski/baritone-toolbox"
   },
 
   "license": "CC0-1.0",
@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.BaritoneUtils"
+      "net.fabricmc.example.BaritoneToolbox"
     ]
   },
   "mixins": [
