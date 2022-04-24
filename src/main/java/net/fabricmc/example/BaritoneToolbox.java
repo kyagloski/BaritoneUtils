@@ -14,9 +14,9 @@ public class BaritoneToolbox implements ModInitializer {
 	public void onInitialize() {
 		ClientLifecycleEvents.CLIENT_STARTED.register(client -> {
 			((InGameHudAccess)client.inGameHud).registerChatListener(
-					MessageType.CHAT,
+					MessageType.SYSTEM, // system type for whispers (chat for chat)
 					(type, message, sender) -> {
-						ChatParser.handleNewChat(message);
+						ChatParser.handleNewChat(type, message);
 					});
 		});
 	}
