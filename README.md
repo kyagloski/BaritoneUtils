@@ -14,7 +14,8 @@ best used with remote baritone bot clients </br>
 currently using this to fill in the gaps for an altocleft client to access baritone commands </br>
 </br>
 the point of this is to control mc clients headlessly but you can also use it for </br>
-other arbitrary purposes such as making other clients using this mod to type anything in chat</br>
+other arbitrary purposes such as making clients using this mod to type anything in chat</br>
 
 ---------------
++ only the remote client requires this mod
 + in the future a whitelist option will be added
