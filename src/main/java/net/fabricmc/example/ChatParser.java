@@ -35,6 +35,7 @@ public class ChatParser {
         if (message.charAt(0) == controlChar) { // i hate java (sometimes)
             LOGGER.info(String.format("found command in: %s", message));
             if (message.contains("about")) { Commands.about(); }
+            else { Commands.baritoneTest(message); }
         }
     }
 }
