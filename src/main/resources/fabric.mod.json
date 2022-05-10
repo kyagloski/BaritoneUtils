@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "id": "baritone-toolbox",
+  "id": "whisper-echo",
   "version": "${version}",
 
-  "name": "Baritone Toolbox",
+  "name": "Whisper Echo",
   "description": "Adds global chat commands for remote baritone bots.",
   "authors": [
     "kyagloski"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/kyagloski/baritone-toolbox"
+    "sources": "https://github.com/kyagloski/whisper-echo"
   },
 
   "license": "CC0-1.0",
@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.BaritoneToolbox"
+      "net.fabricmc.example.WhisperEcho"
     ]
   },
   "mixins": [

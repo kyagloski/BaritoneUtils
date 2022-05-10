@@ -26,7 +26,7 @@ public class ChatParser {
         try {
             String[] splitMessage = message.split(": ");
             if (splitMessage[0].contains("whispers to you")) {
-                BaritoneToolbox.LOGGER.info(splitMessage[1]);
+                WhisperEcho.LOGGER.info(splitMessage[1]);
                 return splitMessage[1];
             }
         } catch (Exception e) { return null; }
@@ -34,10 +34,6 @@ public class ChatParser {
     }
 
     public static void runCommand(String message) {
-        // goto spawn
         mc.player.sendChatMessage(message);
-        //if (message.charAt(0) == '#') {
-        //    mc.player.sendChatMessage(message);
-        //}
     }
 }
